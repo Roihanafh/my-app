@@ -35,21 +35,40 @@ export default HalamanProduk;
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   try {
     if (!params?.product) {
+      console.error("No product parameter provided");
       return {
         notFound: true,
       };
     }
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/produk/${params.product}`);
+    const productId = params.product;
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/produk/${productId}`;
+    
+    console.log("Fetching product from:", apiUrl);
+    console.log("NEXT_PUBLIC_API_URL:", process.env.NEXT_PUBLIC_API_URL);
+
+    const res = await fetch(apiUrl);
+
+    console.log(`API response status: ${res.status}`);
 
     if (!res.ok) {
-      console.error(`API error: ${res.status}`);
+      console.error(`API error: ${res.status} ${res.statusText}`);
+      const errorBody = await res.text();
+      console.error("Error response body:", errorBody);
       return {
         notFound: true,
       };
     }
 
     const response = await res.json();
+    console.log("Product data received:", response);
+
+    if (!response.data) {
+      console.error("No data in API response");
+      return {
+        notFound: true,
+      };
+    }
 
     return {
       props: {
