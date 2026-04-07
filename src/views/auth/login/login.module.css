@@ -1,0 +1,93 @@
+.authPage {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+}
+
+.authCard {
+    width: 100%;
+    max-width: 420px;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 2rem 2.25rem;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 0.25rem;
+    text-align: center;
+}
+
+.subtitle {
+    margin: 0 0 1.75rem;
+    font-size: 0.96rem;
+    color: #6b7280;
+    text-align: center;
+}
+
+.primaryButton {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    border: none;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.98rem;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+.primaryButton:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    transform: translateY(-1px);
+}
+
+.primaryButton:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+}
+
+.secondaryBox {
+    margin-top: 1.5rem;
+    padding: 0.75rem 0.9rem;
+    border-radius: 0.75rem;
+    border: 1px dashed #93c5fd;
+    background-color: #eff6ff;
+    text-align: center;
+}
+
+.secondaryText {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #1d4ed8;
+    font-weight: 500;
+}
+
+.link {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.92rem;
+    color: #1d4ed8;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+    .authCard {
+        padding: 1.75rem 1.5rem;
+    }
+}
