@@ -3,9 +3,9 @@ const path = require('path');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    isrMemoryCacheSize: 0, // Disable ISR caching
-  },
+  // experimental: {
+  //   isrMemoryCacheSize: 0, // Disable ISR caching
+  // },
    turbopack: {
     // atur root ke folder ini agar Turbopack tidak menebak
     root: path.resolve(__dirname)
