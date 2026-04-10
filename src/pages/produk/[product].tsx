@@ -74,7 +74,6 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
       props: {
         product: response.data,
       },
-      revalidate: 60,
     };
   } catch (error) {
     console.error("Error fetching product:", error);
